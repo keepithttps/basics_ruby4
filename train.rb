@@ -1,5 +1,5 @@
 class Train
-  attr_reader :number, :route, :wagons
+  attr_reader :number, :route, :wagons, :type
 
   def initialize(number)
     @number = number
@@ -7,9 +7,9 @@ class Train
   end
 
   def add_wagon(wagon)
-    if wagon.type == "passenger"
+    if wagon.type == type
       wagons << wagon
-    elsif wagon.type == "cargo"
+    elsif wagon.type == type
       wagons << wagon
     else
       puts "Нельзя добавить вагон #{wagon.type}"
